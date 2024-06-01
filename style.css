@@ -1,0 +1,443 @@
+.side-nav {
+    width: 200px;
+    background-color: #009879;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-list li {
+    margin: 10px 0;
+}
+
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-list a:hover {
+    background-color: #007a63;
+}
+
+.content {
+    margin-left: 220px; /* Adjust based on the width of the side nav */
+    padding: 20px;
+    flex: 1;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #009879;
+    display: inline-block;
+    padding-bottom: 5px;
+    scroll-margin-top: 70px; /* Adjust based on the height of your nav bar */
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #009879;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.skincare-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skincare-list > li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.skincare-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-right: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background-color: #fff;
+}
+
+.skincare-details {
+    max-width: 800px;
+}
+
+.skincare-details strong {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.skincare-details ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.meal-image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.meal-item {
+    flex: 1 1 calc(25% - 20px);
+    text-align: center;
+}
+
+.meal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.meal-description {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.exercise-gear-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exercise-gear-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.exercise-gear-list li:last-child {
+    margin-bottom: 0;
+}
+
+.exercise-image {
+    width: 60px;
+    height: auto;
+    border-radius: 8px;
+    margin-left: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sleep-stats-list, .sleep-gear-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sleep-stats-list li, .sleep-gear-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sleep-gear-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding-right: 70px; /* Space for the image */
+}
+
+.sleep-gear-list .sleep-sublist {
+    list-style: disc;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 0; /* Adjust margin to prevent spacing issues */
+}
+
+.sleep-gear-list .sleep-sublist li {
+    margin: 5px 0; /* Adjust the margin to make the bullet points more clear */
+}
+
+.sleep-gear-list li img {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: 100px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dental-stats-list, .dental-routine-list, .dental-gear-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dental-stats-list li, .dental-routine-list li, .dental-gear-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dental-gear-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dental-gear-list li img {
+    margin-left: 20px;
+    width: 60px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .meal-item {
+        flex: 1 1 100%;
+    }
+
+    .exercise-gear-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .exercise-image {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .sleep-gear-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 0;
+    }
+
+    .sleep-gear-list li img {
+        position: static;
+        transform: none;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .dental-gear-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dental-gear-list li img {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.table-wrapper {
+    margin: 20px auto;
+    max-width: 1000px;
+    overflow-x: auto;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1em;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
+
+th {
+    background-color: #009879;
+    color: #ffffff;
+    text-transform: uppercase;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+}
+
+tr:hover, tr.highlight {
+    background-color: #f5f5f5;
+}
+
+.out-of-range {
+    color: red;
+    font-weight: bold;
+}
+
+.osteopenia {
+    color: orange;
+    font-weight: bold;
+}
+
+.osteoporosis {
+    color: red;
+    font-weight: bold;
+}
+
+.search-input {
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.pagination button {
+    background-color: #009879;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+    background-color: #007a63;
+}
+
+.pagination button:disabled {
+    background-color: #cccccc;
+    cursor: default;
+}
+
+.category {
+    background-color: #009879;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+.category:hover {
+    background-color: #007a63;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 250px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip .tooltiptext table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tooltip .tooltiptext th, .tooltip .tooltiptext td {
+    padding: 8px;
+    text-align: center; /* Center align text */
+    border: 1px solid #ddd;
+}
+
+.tooltip .tooltiptext th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.tooltip .tooltiptext .green {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.tooltip .tooltiptext .yellow {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.tooltip .tooltiptext .red {
+    background-color: #f8d7da;
+    color: #721c24;
+}

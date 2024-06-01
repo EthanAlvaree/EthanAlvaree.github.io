@@ -1,0 +1,37 @@
+[
+    {
+        "molecule": "Acarbose",
+        "dose": "100 mg",
+        "frequency": "Each meal"
+    },
+    {
+        "molecule": "Aspirin",
+        "dose": "81 mg",
+        "frequency": "Daily"
+    },
+    {
+        "molecule": "Atorvastatin",
+        "dose": "10 mg",
+        "frequency": "every other day"
+    },
+    {
+        "molecule": "Ezetimibe",
+        "dose": "10 mg",
+        "frequency": "Daily"
+    },
+    {
+        "molecule": "Metformin XR",
+        "dose": "500 mg",
+        "frequency": "2x daily"
+    },
+    {
+        "molecule": "Rapamycin (Sirolimus)",
+        "dose": "4 mg",
+        "frequency": "1x / wk"
+    },
+    {
+        "molecule": "Tadalafil",
+        "dose": "2.5 mg",
+        "frequency": "every other day"
+    }
+]

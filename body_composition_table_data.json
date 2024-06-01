@@ -1,0 +1,78 @@
+{
+    "Overview": [
+        { "variable": "Height", "5/25/24": "63.0 in" },
+        { "variable": "Total Mass", "5/25/24": "113.9 lbs" },
+        { "variable": "Lean Tissue", "5/25/24": "93.7 lbs" },
+        { "variable": "Fat Tissue", "5/25/24": "15.7 lbs" },
+        { "variable": "Total Body Fat Percentage", "5/25/24": "14.4%" },
+        { "variable": "Visceral Fat Pounds", "5/25/24": "0.16 lbs" },
+        { "variable": "A/G Ratio", "5/25/24": "0.61" },
+        { "group": "Bone Mineral Density", "subrows": [
+            { "variable": "BMD T-Score", "5/25/24": "-1.8" },
+            { "variable": "BMD Z-Score", "5/25/24": "-0.6" }
+        ]},
+        { "group": "Metabolism", "subrows": [
+            { "variable": "Resting Metabolic Rate (RMR)", "5/25/24": "1350 cal/day" }
+        ]}
+    ],
+    "Trunk": [
+        { "group": "Trunk", "subrows": [
+            { "variable": "Trunk Total Mass", "5/25/24": "53.7 lbs" },
+            { "variable": "Trunk Lean Tissue", "5/25/24": "46.0 lbs" },
+            { "variable": "Trunk Fat Tissue", "5/25/24": "6.6 lbs" },
+            { "variable": "Trunk Region Fat", "5/25/24": "12.6%" }
+        ]},
+        { "group": "Android", "subrows": [
+            { "variable": "Android Total Mass", "5/25/24": "7.3 lbs" },
+            { "variable": "Android Lean Tissue", "5/25/24": "6.4 lbs" },
+            { "variable": "Android Fat Tissue", "5/25/24": "0.8 lbs" },
+            { "variable": "Android Region Fat", "5/25/24": "10.6%" }
+        ]},
+        { "group": "Gynoid", "subrows": [
+            { "variable": "Gynoid Total Mass", "5/25/24": "17.1 lbs" },
+            { "variable": "Gynoid Lean Tissue", "5/25/24": "13.8 lbs" },
+            { "variable": "Gynoid Fat Tissue", "5/25/24": "2.9 lbs" },
+            { "variable": "Gynoid Region Fat", "5/25/24": "17.1%" }
+        ]}
+    ],
+    "Arms": [
+        { "group": "Arms", "subrows": [
+            { "variable": "Arms Total Mass", "5/25/24": "13.4 lbs" },
+            { "variable": "Arms Lean Tissue", "5/25/24": "10.7 lbs" },
+            { "variable": "Arms Fat Tissue", "5/25/24": "2.1 lbs" },
+            { "variable": "Arms Region Fat", "5/25/24": "15.7%" }
+        ]},
+        { "group": "Right Arm", "subrows": [
+            { "variable": "Right Arm Total Mass", "5/25/24": "6.6 lbs" },
+            { "variable": "Right Arm Lean Tissue", "5/25/24": "5.1 lbs" },
+            { "variable": "Right Arm Fat Tissue", "5/25/24": "1.2 lbs" },
+            { "variable": "Right Arm Region Fat", "5/25/24": "17.8%" }
+        ]},
+        { "group": "Left Arm", "subrows": [
+            { "variable": "Left Arm Total Mass", "5/25/24": "6.7 lbs" },
+            { "variable": "Left Arm Lean Tissue", "5/25/24": "5.5 lbs" },
+            { "variable": "Left Arm Fat Tissue", "5/25/24": "0.9 lbs" },
+            { "variable": "Left Arm Region Fat", "5/25/24": "13.6%" }
+        ]}
+    ],
+    "Legs": [
+        { "group": "Legs", "subrows": [
+            { "variable": "Legs Total Mass", "5/25/24": "36.8 lbs" },
+            { "variable": "Legs Lean Tissue", "5/25/24": "30.0 lbs" },
+            { "variable": "Legs Fat Tissue", "5/25/24": "5.2 lbs" },
+            { "variable": "Legs Region Fat", "5/25/24": "14.0%" }
+        ]},
+        { "group": "Right Leg", "subrows": [
+            { "variable": "Right Leg Total Mass", "5/25/24": "18.8 lbs" },
+            { "variable": "Right Leg Lean Tissue", "5/25/24": "15.4 lbs" },
+            { "variable": "Right Leg Fat Tissue", "5/25/24": "2.6 lbs" },
+            { "variable": "Right Leg Region Fat", "5/25/24": "13.9%" }
+        ]},
+        { "group": "Left Leg", "subrows": [
+            { "variable": "Left Leg Total Mass", "5/25/24": "18.0 lbs" },
+            { "variable": "Left Leg Lean Tissue", "5/25/24": "14.7 lbs" },
+            { "variable": "Left Leg Fat Tissue", "5/25/24": "2.5 lbs" },
+            { "variable": "Left Leg Region Fat", "5/25/24": "14.1%" }
+        ]}
+    ]
+}

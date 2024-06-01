@@ -1,0 +1,691 @@
+[
+    {
+        "name": "Akkermansia",
+        "brand": "Pendulum Glucose Control",
+        "brand_url": "https://pendulumlife.com/products/pendulum-glucose-control-2-og",
+        "dose": "1 billion AFU",
+        "dv": "*",
+        "molecule": "Proprietary probiotic blend (Clostridium butyricum WB-STR-0006, Clostridium beijerinckii WB-STR-0005, Anaerobutyricum hallii WB-STR-0008, Akkermansia muciniphila WB-STR-0001, Bifidobacterium infantis), chicory inulin and oligofructose",
+        "ingredients": "hypromellose (vegetarian capsule), fruit and vegetable juice (color), magnesium stearate, silica",
+        "morning": "1",
+        "evening": "1"
+    },
+    {
+        "name": "Astaxanthin",
+        "brand": "Deva Astaxanthin Super Carotenoid",
+        "brand_url": "https://www.iherb.com/pr/deva-vegan-astaxanthin-super-carotenoid-12-mg-30-vegan-caps/120292",
+        "dose": "12 mg",
+        "dv": "*",
+        "molecule": "Astaxanthin",
+        "ingredients": "Vegetable oleic acid, vegan capsule (cellulose), organic orange oil, silica",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "B Complex",
+        "brand": "Thorne Methyl Guard Plus",
+        "brand_url": "https://www.thorne.com/products/dp/methyl-guard-plus-reg",
+        "subrows": [
+            {
+                "dose": "90 mg",
+                "dv": "6923%",
+                "molecule": "B2 Riboflavin (as Riboflavin 5'-Phosphate Sodium)"
+            },
+            {
+                "dose": "45 mg",
+                "dv": "2647%",
+                "molecule": "B6 Pyridoxine (as Pyridoxal 5'-Phosphate)"
+            },
+            {
+                "dose": "5 mg",
+                "dv": "1250%",
+                "molecule": "B9 Folate (3mg as L-5-Methyltetrahydrofolate, from L-5 Methyltetrahydrofolic Acid, Glucosamine Salt)"
+            },
+            {
+                "dose": "3 mg",
+                "dv": "125000%",
+                "molecule": "B12 Methylcobalmin"
+            },
+            {
+                "dose": "1800 mg",
+                "dv": "*",
+                "molecule": "Betaine Anhydrous (Trimethylglycine)"
+            }
+        ],
+        "ingredients": "Hypromellose (derived from cellulose) capsule, calcium citrate, calcium laurate",
+        "morning": "3",
+        "evening": ""
+    },
+    {
+        "name": "Berberine",
+        "brand": "DoNotAge Pure Berberine",
+        "brand_url": "https://donotage.org/pure-berberine",
+        "dose": "500 mg",
+        "dv": "*",
+        "molecule": "Berberine",
+        "ingredients": "Cellulose",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "Boron",
+        "brand": "Life Extension Boron",
+        "brand_url": "https://www.lifeextension.com/vitamins-supplements/item01661/boron",
+        "subrows": [
+            {
+                "dose": "3 mg",
+                "dv": "*",
+                "molecule": "Boron (as boron citrate / aspartate / glycinate complex)"
+            },
+            {
+                "dose": "25 mg",
+                "dv": "1923%",
+                "molecule": "B2 Riboflavin"
+            }
+        ],
+        "ingredients": "Microcrystalline cellulose, vegetable cellulose (capsule)",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "Broccoli Sulforaphane",
+        "brand": "Jarrow Broccomax Mirosinase Activated SGS",
+        "brand_url": "https://www.iherb.com/pr/jarrow-formulas-vegan-broccomax-35-mg-120-veggie-capsules/68704",
+        "dose": "17.5 mg",
+        "dv": "*",
+        "molecule": "Sulforaphane Glucosinate (from Broccoli Seed Extract [Brassica oleracea L. Italica] [Standardized to 3.5% SGS], Myrosinase Enzyme",
+        "ingredients": "Delayed-release veggie capsule (hydroxypropylmethylcellulose, water), maltodextrin and calcium ascorbate",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "Butyric Acid",
+        "brand": "Tesseract ProButyrate Sustained Release",
+        "brand_url": "https://tessmed.com/probutyrate/",
+        "dose": "600 mg",
+        "dv": "*",
+        "molecule": "Natural Butyric Acid",
+        "ingredients": "Hypromellose (derived from cellulose) capsule, high and low viscosity hydroxypropyl methylcellulose (sustained release), plant derived enzyme, and calcium laurate",
+        "morning": "2",
+        "evening": ""
+    },
+    {
+        "name": "C",
+        "brand": "Now C-500",
+        "brand_url": "https://www.iherb.com/pr/now-foods-c-500-calcium-ascorbate-c-250-capsules/438",
+        "subrows": [
+            {
+                "dose": "500 mg",
+                "dv": "556%",
+                "molecule": "Vitamin C (from Calcium Ascorbate)"
+            },
+            {
+                "dose": "55 mg",
+                "dv": "4%",
+                "molecule": "Calcium (from Calcium Ascorbate)"
+            },
+            {
+                "dose": "10 mg",
+                "dv": "*",
+                "molecule": "Citrus Bioflavonoid Complex"
+            }
+        ],
+        "ingredients": "Hypromellose (cellulose capsule), microcrystalline cellulose and stearic acid (vegetable source)",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "Ca-AKG",
+        "brand": "Prohealth Longevity Calcium AKG Longevity",
+        "brand_url": "https://www.iherb.com/pr/prohealth-longevity-calcium-akg-longevity-1-000-mg-60-capsules-500-mg-per-capsule/114157",
+        "dose": "1000 mg",
+        "dv": "*",
+        "molecule": "Calcium Alpha Ketoglutarate",
+        "ingredients": "Vegetable capsule, rice flour",
+        "morning": "1",
+        "evening": "1"
+    },
+    {
+        "name": "Cocoa Flavanols",
+        "brand": "CocoaVia Cardio Health",
+        "brand_url": "https://www.cocoavia.com/products/cocoa-flavanol-cardio-health-capsules",
+        "subrows": [
+            {
+                "dose": "1130 mg",
+                "dv": "*",
+                "molecule": "Cocoapro Cocoa Extract (Bean)"
+            },
+            {
+                "dose": "500 mg",
+                "dv": "*",
+                "molecule": "Cocoa Flavanols"
+            },
+            {
+                "dose": "85 mg",
+                "dv": "*",
+                "molecule": "of which is (-)-epicatechin"
+            },
+            {
+                "dose": "25 mg",
+                "dv": "*",
+                "molecule": "Caffeine (naturally occurring)"
+            }
+        ],
+        "ingredients": "Hypromellose capsule",
+        "morning": "2",
+        "evening": ""
+    },
+    {
+        "name": "CoQ10",
+        "brand": "Doctor's Best High Absorption CoQ10 with BioPerine",
+        "brand_url": "https://www.iherb.com/pr/doctor-s-best-high-absorption-coq10-with-bioperine-100-mg-120-veggie-caps/15658",
+        "dose": "100 mg",
+        "dv": "*",
+        "molecule": "Coenzyme Q10 (Ubiquinone)",
+        "ingredients": "Rice powder, hypromellose (vegetarian capsule), magnesium stearate (vegetable source), silicon dioxide",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "Creatine",
+        "brand": "Life Extension Creatine Capsules",
+        "brand_url": "https://www.lifeextension.com/vitamins-supplements/item01529/creatine-capsules",
+        "subrows": [
+            {
+                "dose": "3000 mg",
+                "dv": "*",
+                "molecule": "Creatine monohydrate"
+            },
+            {
+                "dose": "33 mg",
+                "dv": "36%",
+                "molecule": "Vitamin C (as ascorbyl palmitate)"
+            }
+        ],
+        "ingredients": "Vegetable cellulose (capsule), stearic acid, silica",
+        "morning": "6",
+        "evening": ""
+    },
+    {
+        "name": "Curcumin",
+        "brand": "Life Extension Curcumin Elite",
+        "brand_url": "https://www.lifeextension.com/vitamins-supplements/item02407/curcumin-elite-turmeric-extract",
+        "subrows": [
+            {
+                "dose": "500 mg",
+                "dv": "*",
+                "molecule": "Curcumin Elite Proprietary CGM Blend"
+            },
+            {
+                "dose": "200 mg",
+                "dv": "",
+                "molecule": "40% curcuminoids [from turmeric (rhizome)]"
+            },
+            {
+                "dose": "15 mg",
+                "dv": "",
+                "molecule": "3% turmerones [from turmeric (rhizome)]"
+            },
+            {
+                "dose": "150 mg",
+                "dv": "",
+                "molecule": "30% galactomannans [from fenugreek (seed)]"
+            }
+        ],
+        "ingredients": "microcrystalline cellulose, vegetable cellulose (capsule), vegetable stearate, silica",
+        "morning": "",
+        "evening": ""
+    },
+    {
+        "name": "D-3",
+        "brand": "Doctor's Best Vegan D3 2500 IU with Vitashine D3",
+        "brand_url": "https://www.iherb.com/pr/doctor-s-best-vegan-d3-with-vitashine-d3-2-500-iu-60-veggie-caps/51402",
+        "dose": "62.5 mcg (2500 IU)",
+        "dv": "310%",
+        "molecule": "Vitamin D3 (as cholecalciferol) (Vitashine D3)",
+        "ingredients": "Microcrystalline cellulose, modified cellulose (vegetarian capsule), maltodextrin, starch, sucrose, silicon dioxide, d-alpha tocopherol, ascorbyl palmitate",
+        "morning": "1",
+        "evening": "1"
+    },
+    {
+        "name": "DHEA",
+        "brand": "Country Life DHEA",
+        "brand_url": "https://www.iherb.com/pr/country-life-dhea-25-mg-90-vegan-capsules/1681",
+        "dose": "25 mg",
+        "dv": "*",
+        "molecule": "Dehydroepiandrosterone (DHEA)",
+        "ingredients": "Hypromellose (capsule shell), vegetable magnesium stearate, silica",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "E",
+        "brand": "Now Vitamin E-Oil d-alpha Tocopherol",
+        "brand_url": "https://www.iherb.com/pr/now-foods-vitamin-e-oil-antioxidant-protection-1-fl-oz-30-ml/565",
+        "dose": "85 mg",
+        "dv": "567%",
+        "molecule": "Vitamin E (as d-alpha Tocopherol)",
+        "ingredients": "Organic extra virgin olive oil",
+        "morning": "4 drops",
+        "evening": ""
+    },
+    {
+        "name": "Omega 3 (DHA/EPA/DPA) & Omega-7",
+        "brand": "DEVA Omega-3 DHA-EPA 300 mg",
+        "brand_url": "https://www.iherb.com/pr/deva-vegan-omega-3-dha-epa-300-mg-90-softgels/55158",
+        "subrows": [
+            {
+                "dose": "587 mg",
+                "dv": "*",
+                "molecule": "DHA (docosahexaenoic acid)"
+            },
+            {
+                "dose": "368 mg",
+                "dv": "*",
+                "molecule": "EPA (eicosapentaenoic acid)"
+            },
+            {
+                "dose": "75 mg",
+                "dv": "*",
+                "molecule": "DPA (docosapentaenoic acid)"
+            },
+            {
+                "dose": "0.9 mg",
+                "dv": "*",
+                "molecule": "Omega 7 (palmitoleic acid)"
+            }
+        ],
+        "ingredients": "Non-GMO Tapioca starch, Vegetable Glycerin, Purified Water, High Oleic Sunflower Oil, Mixed Tocopherols, Orange Oil (Organic), Annatto color, Rosemary Extract, Ascorbyl Palmitate",
+        "morning": "3",
+        "evening": ""
+    },
+    {
+        "name": "Omega 3 (ALA)",
+        "brand": "DEVA Vegan Flaxseed Oil",
+        "brand_url": "https://www.iherb.com/pr/deva-premium-vegan-flaxseed-oil-90-vegan-caps/14687",
+        "dose": "500 mg",
+        "dv": "*",
+        "molecule": "Flaxseed Oil (organic) (Typically providing 55% Alpha Linolenic Acid)",
+        "ingredients": "Vegan capsule (cellulose), organic orange oil, silica, mixed tocopherols",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "Fisetin",
+        "brand": "Life Extension Bio-Fisetin",
+        "brand_url": "https://www.lifeextension.com/vitamins-supplements/item02414/bio-fisetin",
+        "subrows": [
+            {
+                "dose": "44.5 mg",
+                "dv": "*",
+                "molecule": "Bio-Fisetin Proprietary Blend"
+            },
+            {
+                "dose": "8 mg",
+                "dv": "*",
+                "molecule": "18% fisetin [from wax tree extract (stem)]"
+            },
+            {
+                "dose": "15 mg",
+                "dv": "*",
+                "molecule": "35% galactomannans [from fenugreek (seed)]"
+            }
+        ],
+        "ingredients": "microcrystalline cellulose, vegetable cellulose (capsule), soluble fiber, sunflower lecithin, silica, vegetable stearate",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "Garlic",
+        "brand": "Life Extension Optimized Garlic",
+        "brand_url": "https://www.lifeextension.com/vitamins-supplements/item01394/optimized-garlic",
+        "subrows": [
+            {
+                "dose": "2400 mg",
+                "dv": "*",
+                "molecule": "Garlic extract (bulb) [std. to 10,000 ppm allicin potential]"
+            },
+            {
+                "dose": "1200 mg",
+                "dv": "*",
+                "molecule": "Aged garlic extract Powder (bulb)"
+            }
+        ],
+        "ingredients": "vegetable cellulose (capsule), microcrystalline cellulose, vegetable stearate",
+        "morning": "4",
+        "evening": "4"
+    },
+    {
+        "name": "Genistein",
+        "brand": "Swanson Genistein from Sophora Japonica, Soy Free",
+        "brand_url": "https://www.iherb.com/pr/swanson-genistein-from-sophora-japonica-soy-free-125-mg-60-veggie-capsules/119524",
+        "dose": "125 mg",
+        "dv": "*",
+        "molecule": "Genistein (Sophora japonica) (fruit)",
+        "ingredients": "rice flour, hypromellose (vegetarian capsule), L-leucine, silica",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "Ginger Root",
+        "brand": "Spring Valley Ginger Root",
+        "brand_url": "https://www.walmart.com/ip/seort/103181381",
+        "dose": "1100 mg",
+        "dv": "*",
+        "molecule": "Organic ginger root (zingiber officinale)",
+        "ingredients": "hypromellose (capsule), rice hulls, rice extract",
+        "morning": "2",
+        "evening": ""
+    },
+    {
+        "name": "Glucosamine Chondroitin MSM",
+        "brand": "Doctor's Best Vegan Glucosamine Chondroitin MSM",
+        "brand_url": "https://www.iherb.com/pr/doctor-s-best-vegan-glucosamine-chondroitin-msm-120-veggie-caps/89243",
+        "subrows": [
+            {
+                "dose": "1500 mg",
+                "dv": "*",
+                "molecule": "Glucosamine Hydrochloride Potassium Sulfate (GreenGrown Glucosamine)"
+            },
+            {
+                "dose": "1000 mg",
+                "dv": "*",
+                "molecule": "MSM (Methylsulfonylmethane) (OptiMSM)"
+            },
+            {
+                "dose": "600 mg",
+                "dv": "*",
+                "molecule": "Chondroitin Sulfate (from chondroitin sulfate sodium) (Mythocondro)"
+            },
+            {
+                "dose": "180 mg",
+                "dv": "8%",
+                "molecule": "Chloride (from glucosamine hydrochloride potassium sulfate)"
+            },
+            {
+                "dose": "65 mg",
+                "dv": "3%",
+                "molecule": "Sodium (from chondroitin sulfate sodium)"
+            },
+            {
+                "dose": "200 mg",
+                "dv": "4%",
+                "molecule": "Potassium (from glucosamine hydrochloride potassium sulfate)"
+            }
+        ],
+        "ingredients": "Hypromellose (vegetarian capsule), microcrystalline cellulose, silicon dioxide, stearic acid",
+        "morning": "4",
+        "evening": "4"
+    },
+    {
+        "name": "Glycine",
+        "brand": "Life Extension Glycine",
+        "brand_url": "https://www.lifeextension.com/vitamins-supplements/item01669/glycine",
+        "dose": "1000 mg",
+        "dv": "*",
+        "molecule": "Glycine",
+        "ingredients": "vegetable cellulose (capsule), ascorbyl palmitate",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "TMG (Beta Anhydrous Trimethylglycine)",
+        "brand": "Life Extension TMG",
+        "brand_url": "https://www.lifeextension.com/vitamins-supplements/item01859/tmg",
+        "dose": "1000 mg",
+        "dv": "*",
+        "molecule": "Trimethylglycine (TMG) (as beta anhydrous)",
+        "ingredients": "glycerin, vegetable cellulose (capsule), purified water",
+        "morning": "2",
+        "evening": ""
+    },
+    {
+        "name": "Hyaluronic Acid",
+        "brand": "DEVA Hyaluronic Acid",
+        "brand_url": "https://www.iherb.com/pr/deva-vegan-hyaluronic-acid-100-mg-90-tablets/120289",
+        "dose": "300 mg",
+        "dv": "*",
+        "molecule": "Hyaluronic Acid (from Sodium Hyaluronate)",
+        "ingredients": "Cellulose, vegetable magnesium stearate, hypromellose, vegetable glycerin",
+        "morning": "",
+        "evening": "3"
+    },
+    {
+        "name": "Iodine",
+        "brand": "Swanson Kelp",
+        "brand_url": "https://www.swansonvitamins.com/p/swanson-premium-kelp-iodine-source-225-mcg-500-tabs",
+        "subrows": [
+            {
+                "dose": "225 mcg every other day",
+                "dv": "150%",
+                "molecule": "Iodine (from kelp)"
+            },
+            {
+                "dose": "56 mg every other day",
+                "dv": "*",
+                "molecule": "Atlantic Kelp (ascophyllum nodosum) (standardized to 0.4% iodine)"
+            }
+        ],
+        "ingredients": "Dicalcium phosphate, calcium carbonate, microcrystalline cellulose (plant fiber), stearic acid, silica, magnesium stearate, acacia, maltodextrin",
+        "morning": "1 every other day",
+        "evening": ""
+    },
+    {
+        "name": "K",
+        "brand": "Thorne Vitamin K",
+        "brand_url": "https://www.iherb.com/pr/thorne-vitamin-k-60-capsules/75088",
+        "subrows": [
+            {
+                "dose": "1 mg",
+                "dv": "5075%",
+                "molecule": "K1"
+            },
+            {
+                "dose": "5 mg",
+                "dv": "",
+                "molecule": "K2 (as MK-4)"
+            },
+            {
+                "dose": "90 mcg",
+                "dv": "",
+                "molecule": "K2 (as MK-7)"
+            }
+        ],
+        "ingredients": "Microcrystalline cellulose, hypromellose (derived from cellulose) capsule, silicon dioxide, vitamin E (mixed tocopherols)",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "L-Lysine",
+        "brand": "Spring Valley L-Lysine",
+        "brand_url": "https://www.walmart.com/ip/seort/17324899",
+        "dose": "1000 mg",
+        "dv": "*",
+        "molecule": "L-Lysine (as L-Lysine Hydrochloride)",
+        "ingredients": "Cellulose. Contains <2% of: croscarmellose, silica, vegetable magnesium stearate, vegetable stearic acid",
+        "morning": "1",
+        "evening": "1"
+    },
+    {
+        "name": "Lithium Orotate",
+        "brand": "Life Extension Lithium",
+        "brand_url": "https://www.lifeextension.com/vitamins-supplements/item02403",
+        "dose": "1 mg",
+        "dv": "*",
+        "molecule": "Lithium (as lithium orotate)",
+        "ingredients": "microcrystalline cellulose, vegetable cellulose (capsule)",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "Lycopene",
+        "brand": "21st Century Lycopene",
+        "brand_url": "https://www.iherb.com/pr/21st-century-lycopene-25-mg-60-tablets/3359",
+        "subrows": [
+            {
+                "dose": "25 mg every other day",
+                "dv": "*",
+                "molecule": "Lycopene"
+            },
+            {
+                "dose": "170 mg",
+                "dv": "13%",
+                "molecule": "Calcium (as calcium carbonate)"
+            }
+        ],
+        "ingredients": "Starch, cellulose, croscarmellose sodium, stearic acid, gum acacia. Contains <2% of: artificial colors (carmine, FD&C blue #1), corn oil, dl-alpha tocopherol, hydroxypropyl methylcellulose, magnesium silicate, magnesium stearate, polyethylene glycol, polyvinyl alcohol, silicon dioxide, titanium dioxide",
+        "morning": "1 every other day",
+        "evening": ""
+    },
+    {
+        "name": "Magnesium",
+        "brand": "DEVA Magnesium Glycinate with Trace Minerals",
+        "brand_url": "https://www.iherb.com/pr/deva-premium-vegan-flaxseed-oil-90-vegan-caps/14687",
+        "subrows": [
+            {
+                "dose": "100 mg",
+                "dv": "24%",
+                "molecule": "Magnesium (from Magnesium Bisglycinate)"
+            },
+            {
+                "dose": "10 mg",
+                "dv": "*",
+                "molecule": "Trace Minerals (from Utah Inland Sea)"
+            }
+        ],
+        "ingredients": "Dicalcium phosphate, cellulose, vegetable stearic acid, croscarmellose sodium, silica, hypromellose, and vegetable magnesium stearate",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "Myo-inositol",
+        "brand": "Life Extension Inositol Caps",
+        "brand_url": "https://www.lifeextension.com/vitamins-supplements/item01674/inositol-caps",
+        "dose": "1000 mg",
+        "dv": "*",
+        "molecule": "Inositol [as myo-inositol]",
+        "ingredients": "vegetable cellulose (capsule), vegetable stearate, silica",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "NAC",
+        "brand": "Life Extension N-Acetyl-L-Cysteine",
+        "brand_url": "https://www.lifeextension.com/vitamins-supplements/item01534/n-acetyl-l-cysteine",
+        "dose": "1800 mg",
+        "dv": "*",
+        "molecule": "N-acetyl-L-cysteine",
+        "ingredients": "vegetable cellulose (capsule), vegetable stearate, silica",
+        "morning": "3",
+        "evening": ""
+    },
+    {
+        "name": "NR",
+        "brand": "Tru Niagen",
+        "brand_url": "https://www.truniagen.com/truniagen-300mg/",
+        "dose": "300 mg",
+        "dv": "*",
+        "molecule": "Niagen (nicotinamide riboside chloride)",
+        "ingredients": "microcrystalline cellulose, hypromellose (vegetarian capsule), vegetable magnesium, stearate",
+        "morning": "2",
+        "evening": ""
+    },
+    {
+        "name": "Psyllium Husk",
+        "brand": "Yerba Prima, Psyllium Husks Veg Caps",
+        "brand_url": "https://www.iherb.com/pr/yerba-prima-psyllium-husks-veg-caps-180-capsules/4367",
+        "dose": "5000 mg",
+        "dv": "*",
+        "molecule": "psyllium",
+        "ingredients": "cellulose capsule",
+        "morning": "4 (with meal)",
+        "evening": "4 (with meal)"
+    },
+    {
+        "name": "Spermidine",
+        "brand": "Nutricost Spermidine Wheat Germ",
+        "brand_url": "https://www.iherb.com/pr/nutricost-spermidine-wheat-germ-1-500-mg-120-capsules-5-mg-per-capsule/126039",
+        "subrows": [
+            {
+                "dose": "1000 mg",
+                "dv": "*",
+                "molecule": "Wheat germ extract (Triticum) (germ) (1% spermidine) (equivalent to 10 mg spermidine)"
+            },
+            {
+                "dose": "0.5 mg",
+                "dv": "40%",
+                "molecule": "Thiamin (as thiamine hydrochloride)"
+            },
+            {
+                "dose": "3 mg",
+                "dv": "25%",
+                "molecule": "Zinc (as zinc citrate)"
+            }
+        ],
+        "ingredients": "Hypromellose (cellulose) capsule, magnesium stearate (vegetable source)",
+        "morning": "2",
+        "evening": ""
+    },
+    {
+        "name": "Taurine",
+        "brand": "Now Double Strength Taurine",
+        "brand_url": "https://www.iherb.com/pr/now-foods-taurine-double-strength-1-000-mg-100-veg-capsules/15787",
+        "dose": "2000 mg",
+        "dv": "*",
+        "molecule": "Taurine (free-form)",
+        "ingredients": "cellulose (capsule) and stearic acid (vegetable source)",
+        "morning": "2",
+        "evening": ""
+    },
+    {
+        "name": "Urolithin A",
+        "brand": "Timeline Mitopure Powder",
+        "brand_url": "https://www.timeline.com/products/mitopure-powder",
+        "dose": "500 mg",
+        "dv": "*",
+        "molecule": "Urolithin A",
+        "ingredients": "blueberry powder, raspberry powder, rice fiber, pomegranate extract, natural flavor",
+        "morning": "1",
+        "evening": ""
+    },
+    {
+        "name": "Zeaxanthin & Lutein",
+        "brand": "Sports Research Lutein + Zeaxanthin",
+        "brand_url": "https://a.co/d/biVNXqi",
+        "subrows": [
+            {
+                "dose": "20 mg every other day",
+                "dv": "*",
+                "molecule": "Lutein (from marigold extract [tagetes spp.]) (flower) (Lute-gen)"
+            },
+            {
+                "dose": "4 mg every other day",
+                "dv": "*",
+                "molecule": "Zeaxanthin (from marigold extract [tagetes spp.]) (flower) (Lute-gen)"
+            }
+        ],
+        "ingredients": "Organic coconut oil, plantgel capsule (from non-gmo modified tapioca starch, vegetable glycerin, purified water), sunflower oil",
+        "morning": "1 every other day",
+        "evening": ""
+    },
+    {
+        "name": "Zinc & Copper",
+        "brand": "Jarrow Zinc Balance",
+        "brand_url": "https://www.iherb.com/pr/jarrow-formulas-vegan-zinc-balance-100-veggie-capsules/278",
+        "subrows": [
+            {
+                "dose": "15 mg",
+                "dv": "136%",
+                "molecule": "Zinc (as zinc L-Methionine Sulfate)"
+            },
+            {
+                "dose": "1 mg",
+                "dv": "111%",
+                "molecule": "Copper (as gluconate)"
+            }
+        ],
+        "ingredients": "microcrystalline cellulose, capsule (hydroxypropylmethylcellulose, water), and magnesium stearate (vegetable source)",
+        "morning": "1",
+        "evening": ""
+    }
+]

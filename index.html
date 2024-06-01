@@ -1,10 +1,436 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Ethan's Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Health Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
 </head>
 <body>
-    Welcome to my website :)
-    Testing a new change
+    <nav class="side-nav">
+        <ul class="nav-list">
+            <li><a href="#body-composition">Body Composition</a></li>
+            <li><a href="#bloodwork">Bloodwork</a></li>
+            <li><a href="#prescriptions">Prescription Medications</a></li>
+            <li><a href="#investigations">Current Investigations</a></li>
+            <li><a href="#supplements">Supplements</a></li>
+            <li><a href="#skincare">Skincare</a></li>
+            <li><a href="#diet">Diet</a></li>
+            <li><a href="#exercise">Exercise</a></li>
+            <li><a href="#sleep">Sleep</a></li>
+            <li><a href="#oral-care">Oral Care</a></li>
+            <li><a href="#challenges">Current Challenges</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h2 id="body-composition">Body Composition</h2>
+        <div class="table-wrapper" id="body-composition-table-wrapper">
+            <p>A DEXA scan on 5/25/24 revealed the following body composition:</p>
+            <input type="text" id="body-composition-search-input" class="search-input" placeholder="Search Body Composition...">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>5/25/24</th>
+                    </tr>
+                </thead>
+                <tbody id="body-composition-table-body">
+                    <!-- Rows will be loaded here -->
+                </tbody>
+            </table>
+            <div class="pagination" id="body-composition-categories">
+                <button class="category" onclick="loadBodyCompositionCategory('Overview')">Overview</button>
+                <button class="category" onclick="loadBodyCompositionCategory('Trunk')">Trunk</button>
+                <button class="category" onclick="loadBodyCompositionCategory('Arms')">Arms</button>
+                <button class="category" onclick="loadBodyCompositionCategory('Legs')">Legs</button>
+            </div>
+            <img src="assets/dexa.png" alt="DEXA Scan" class="centered-image" style="display: block; margin: 0 auto; max-width: 50%;">
+        </div>
+
+        <h2 id="bloodwork">Bloodwork</h2>
+        <div class="table-wrapper" id="bloodwork-table-wrapper">
+            <p>Labs are ordered on a quarterly basis from InsideTracker and Ulta Lab Tests.</p>
+            <input type="text" id="bloodwork-search-input" class="search-input" placeholder="Search Bloodwork...">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Unit</th>
+                        <th>Reference Range</th>
+                        <th>Trend</th>
+                        <th>5/20/24</th>
+                        <th>9/14/23</th>
+                        <th>5/12/23</th>
+                        <th>12/14/22</th>
+                    </tr>
+                </thead>
+                <tbody id="bloodwork-table-body">
+                    <!-- Rows will be loaded here -->
+                </tbody>
+            </table>
+            <div class="pagination" id="bloodwork-categories">
+                <button class="category" onclick="loadBloodworkCategory('Cardiovascular')">Cardiovascular</button>
+                <button class="category" onclick="loadBloodworkCategory('CBC')">CBC</button>
+                <button class="category" onclick="loadBloodworkCategory('Immune')">Immune</button>
+                <button class="category" onclick="loadBloodworkCategory('Endurance')">Endurance</button>
+                <button class="category" onclick="loadBloodworkCategory('Hormones')">Hormones</button>
+                <button class="category" onclick="loadBloodworkCategory('Kidney')">Kidney</button>
+                <button class="category" onclick="loadBloodworkCategory('Liver')">Liver</button>
+                <button class="category" onclick="loadBloodworkCategory('Metabolism')">Metabolism</button>
+                <button class="category" onclick="loadBloodworkCategory('Recovery')">Recovery</button>
+                <button class="category" onclick="loadBloodworkCategory('Thyroid')">Thyroid</button>
+                <button class="category" onclick="loadBloodworkCategory('Vitamins')">Vitamins</button>
+                <button class="category" onclick="loadBloodworkCategory('Minerals')">Minerals</button>
+                <button class="category" onclick="loadBloodworkCategory('Toxicology')">Toxicology</button>
+            </div>
+        </div>
+
+        <h2 id="prescriptions">Prescription Medications</h2>
+        <div class="table-wrapper" id="prescriptions-table-wrapper">
+            <input type="text" id="prescriptions-search-input" class="search-input" placeholder="Search Prescriptions...">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Molecule</th>
+                        <th>Dose</th>
+                        <th>Frequency</th>
+                    </tr>
+                </thead>
+                <tbody id="prescriptions-table-body">
+                    <!-- Rows will be loaded here -->
+                </tbody>
+            </table>
+            <div class="pagination" id="prescriptions-pagination">
+                <!-- Pagination buttons will be loaded here -->
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <h4>Current Investigations:</h3>
+            <ul>
+                <li><strong>17α-Estradiol 8 mg / wk transdermal</strong>
+                    <ul>
+                        <li>for slowing aging and reducing all-cause mortality</li>
+                    </ul>
+                </li>
+                <li><strong>Finasteride 1 mg</strong>
+                    <ul>
+                        <li>for prostate health and cancer risk reduction</li>
+                    </ul>
+                </li>
+                <li><strong>Telmisartan 80 mg</strong>
+                    <ul>
+                        <li>for blood pressure benefits of Angiotensin II Receptor Blockers (ARBs).</li>
+                    </ul>
+                </li>
+                <li><strong>Canagliflozin 100 mg / empagliflozin 10mg</strong>
+                    <ul>
+                        <li>for SGLT2 Inhibitors benefits on blood sugar, blood pressure, and risk of heart and kidney disease.</li>
+                    </ul>
+                </li>
+                <li><strong>Tirzepatide 1 mg</strong>
+                    <ul>
+                        <li>for benefits of GLP-1 Agonists & GIP Analogues benefits on blood sugar, blood pressure, and risk of heart and kidney disease.</li>
+                    </ul>
+                </li>
+                <li><strong>LDN (low-dose naltrexone) 4.5 mg</strong>
+                    <ul>
+                        <li>for immune system modulation and reducing inflammation-induced aging ('inflammaging')</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <h2 id="supplements">Supplements</h2>
+        <div class="table-wrapper" id="supplements-table-wrapper">
+            <input type="text" id="supplements-search-input" class="search-input" placeholder="Search Supplements...">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Brand Name</th>
+                        <th>Dose</th>
+                        <th>% DV</th>
+                        <th>Molecule</th>
+                        <th>Other Ingredients</th>
+                        <th>Capsules / morning</th>
+                        <th>Capsules / evening</th>
+                    </tr>
+                </thead>
+                <tbody id="supplements-table-body">
+                    <!-- Rows will be loaded here -->
+                </tbody>
+            </table>
+            <div class="pagination" id="supplements-pagination">
+                <!-- Pagination buttons will be loaded here -->
+            </div>
+        </div>
+
+        <h2 id="skincare">Skincare</h2>
+        <div class="table-wrapper">
+            <h3>Morning</h3>
+            <ul class="skincare-list">
+                <li>
+                    <img src="assets/skinceuticals.webp" alt="SkinCeuticals C E Ferulic" class="skincare-image">
+                    <div class="skincare-details">
+                        <strong>SkinCeuticals C E Ferulic:</strong>
+                        <ul>
+                            <li>15% L-ascorbic acid</li>
+                            <li>1% alpha tocopherol</li>
+                            <li>0.5% ferulic acid</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <img src="assets/la_roche-posay_uv.webp" alt="La Roche-Posay Toleriane Double Repair Face Moisturizer UV" class="skincare-image">
+                    <div class="skincare-details">
+                        <strong>La Roche-Posay Toleriane Double Repair Face Moisturizer UV:</strong>
+                        <ul>
+                            <li>Avobenzone 3% (sunscreen)</li>
+                            <li>Homosalate 10% (sunscreen)</li>
+                            <li>Octisalate 5% (sunscreen)</li>
+                            <li>Octocrylene 7% (sunscreen)</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <img src="assets/skin_aqua.webp" alt="Skin Aqua UV super moisture Gel SPF 50+ PA++++" class="skincare-image">
+                    <div class="skincare-details">
+                        <strong>Skin Aqua UV super moisture Gel SPF 50+ PA++++</strong>
+                        <ul>
+                            <li>Ethylhexyl Methoxycinnamate (sunscreen)</li>
+                            <li>Bis-Ethylhexyloxyphenol Methoxyphenyl Triazine (bemotrizinol) (sunscreen)</li>
+                            <li>Diethylamino Hydroxybenzoyl Hexyl Benzoate (sunscreen)</li>
+                            <li>Ethylhexyl Triazone (sunscreen)</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <h3>Evening</h3>
+            <ul class="skincare-list">
+                <li>
+                    <img src="assets/curology.webp" alt="Curology Custom Compounded Formula" class="skincare-image">
+                    <div class="skincare-details">
+                        <strong>Curology Custom Compounded Formula:</strong>
+                        <ul>
+                            <li>Tretinoin 0.05%</li>
+                            <li>Tranexamic acid 5%</li>
+                            <li>Niacinamide 4%</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <img src="assets/topical_rapamycin.png" alt="Topical Rapamycin 0.1%" class="skincare-image">
+                    <div class="skincare-details">
+                        <strong>Topical Rapamycin 0.1%</strong>
+                    </div>
+                </li>
+                <li>
+                    <img src="assets/la_roche-posay.jpg" alt="La Roche-Posay Toleriane Double Repair Face Moisturizer" class="skincare-image">
+                    <div class="skincare-details">
+                        <strong>La Roche-Posay Toleriane Double Repair Face Moisturizer:</strong>
+                        <ul>
+                            <li>Prebiotic thermal water</li>
+                            <li>Glycerin</li>
+                            <li>Ceramide-3</li>
+                            <li>Niacinamide</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <h2 id="diet">Diet</h2>
+        <div class="table-wrapper">
+            <h3>Breakfast (6:00 AM)</h3>
+            <div class="meal-image-grid">
+                <div class="meal-item">
+                    <img src="assets/breakfast_brownie_batter.jpg" alt="Brownie Batter Smoothie" class="meal-image">
+                    <!-- <p>Brownie Batter Smoothie</p> -->
+                </div>
+                <div class="meal-item">
+                    <img src="assets/breakfast_matcha_chia.jpg" alt="Matcha Chia Smoothie" class="meal-image">
+                    <!-- <p>Matcha Chia Smoothie</p> -->
+                </div>
+                <div class="meal-item">
+                    <img src="assets/breakfast_blue_wildflower.jpg" alt="Blue Wildflower Smoothie" class="meal-image">
+                    <!-- <p>Blue Wildflower Smoothie</p> -->
+                </div>
+                <div class="meal-item">
+                    <img src="assets/breakfast_chunky_monkey.jpg" alt="Chunky Monkey Smoothie" class="meal-image">
+                    <!-- <p>Chunky Monkey Smoothie</p> -->
+                </div>
+            </div>
+            <p class="meal-description">One Thistle plant-based breakfast smoothie</p>
+
+            <h3>Lunch (11:30 AM)</h3>
+            <div class="meal-image-grid">
+                <div class="meal-item">
+                    <img src="assets/lunch_pinto_bacon_ranch_potato.jpg" alt="Pinto Bacon Ranch Potato Salad" class="meal-image">
+                    <!-- <p>Pinto Bacon Ranch Potato Salad</p> -->
+                </div>
+                <div class="meal-item">
+                    <img src="assets/lunch_muffuletta.jpg" alt="Muffuletta Salad" class="meal-image">
+                    <!-- <p>Muffuletta Salad</p> -->
+                </div>
+                <div class="meal-item">
+                    <img src="assets/lunch_ramen_salad.jpg" alt="Ramen Salad" class="meal-image">
+                    <!-- <p>Ramen Salad</p> -->
+                </div>
+                <div class="meal-item">
+                    <img src="assets/lunch_falafel_salad.jpg" alt="Falafel Salad" class="meal-image">
+                    <!-- <p>Falafel Salad</p> -->
+                </div>
+            </div>
+            <p class="meal-description">One Thistle plant-based lunch salad</p>
+
+            <h3>Dinner (4:00 PM)</h3>
+            <div class="meal-image-grid">
+                <div class="meal-item">
+                    <img src="assets/dinner_blue_lagoon_falafel.jpg" alt="Blue Lagoon Falafel Bowl" class="meal-image">
+                    <!-- <p>Blue Lagoon Falafel Bowl</p> -->
+                </div>
+                <div class="meal-item">
+                    <img src="assets/dinner_moroccan_tagine.jpg" alt="Moroccan Tagine Bowl" class="meal-image">
+                    <!-- <p>Moroccan Tagine Bowl</p> -->
+                </div>
+                <div class="meal-item">
+                    <img src="assets/dinner_crunchy_thai_peanut.jpeg" alt="Crunchy Thai Peanut Bowl" class="meal-image">
+                    <!-- <p>Crunchy Thai Peanut Bowl</p> -->
+                </div>
+                <div class="meal-item">
+                    <img src="assets/dinner_artichoke_scampi.jpg" alt="Roasted Artichoke Scampi" class="meal-image">
+                    <!-- <p>Roasted Artichoke Scampi</p> -->
+                </div>
+            </div>
+            <p class="meal-description">One Thistle plant-based dinner bowl</p>
+        </div>
+
+        <h2 id="exercise">Exercise</h2>
+        <div class="table-wrapper">
+            <p>
+                After a DEXA scan revealed osteopenia, I have switched to rucking (walking with a weighted backpack) to increase bone density. I have also added a 3-day per week strength training program to increase muscle mass and bone density.
+            </p>
+
+            <h3>Exercise Gear:</h3>
+            <ul class="exercise-gear-list">
+                <li>
+                    GORUCK Rucker 4.0 20L backpack with padded hip belt
+                    <img src="assets/goruck_rucker.jpeg" alt="GORUCK Rucker 4.0 Armor Grey + Coyote / 20L" class="exercise-image">
+                    <!-- <img src="assets/goruck_rucker_back.jpeg" alt="GORUCK Rucker 4.0" class="exercise-image"> -->
+                </li>
+                <li>
+                    Xero Zelen Sustainable Cork zero-drop, wide toebox shoe
+                    <img src="assets/xero_zelen.jpg" alt="Xero Zelen" class="exercise-image">
+                </li>
+                <li>
+                    Dexcom G7 Continuous Glucose Monitor (CGM)
+                    <img src="assets/dexcom_g7.png" alt="Dexcom G7" class="exercise-image">
+                </li>
+            </ul>
+        </div>
+
+        <h2 id="sleep">Sleep</h2>
+        <div class="table-wrapper">
+            <h3>Sleep Stats:</h3>
+            <ul class="sleep-stats-list">
+                <li>Average bedtime: 9:50 PM</li>
+                <li>Average wakeup: 6:05 AM</li>
+                <li>Time to fall asleep: &lt;15 min</li>
+                <li>Time to get up: &lt;1 min</li>
+                <li>Average 19 minutes snoring</li>
+                <li>Average resting heart rate: 48 - 52 bpm</li>
+                <li>Average HRV: 42 - 52 ms</li>
+                <li>Average respiratory rate: 13.1 - 16.1 breath / min</li>
+            </ul>
+            
+            <h3>Sleep Gear:</h3>
+            <ul class="sleep-gear-list">
+                <li>
+                    <div>
+                        <span>Eight Sleep Pod 3</span>
+                        <ul class="sleep-sublist">
+                            <li>Temperature set to 82°F bedtime, 78°F deep, 80°F REM, 97°F wakeup</li>
+                        </ul>
+                    </div>
+                    <img src="assets/eight_sleep_pod_3.jpg" alt="Eight Sleep Pod 3" class="sleep-image">
+                </li>
+                <li>
+                    <span>Eye shade</span>
+                    <!-- <img src="assets/eye_shade.jpg" alt="Eye Shade" class="sleep-image"> -->
+                </li>
+                <li>
+                    <span>Breathe Right nose strips</span>
+                    <!-- <img src="assets/breathe_right_nose_strips.jpg" alt="Breathe Right Nose Strips" class="sleep-image"> -->
+                </li>
+            </ul>
+        </div>
+
+        <h2 id="oral-care">Oral Care</h2>
+        <div class="table-wrapper">
+            <h3>Dental Stats</h3>
+            <ul>
+                <li>Dental cleanings 4x / year</li>
+                <li>Never had a cavity</li>
+                <li>Invisalign and cosmetic bonding in 2017</li>
+            </ul>
+            
+            <h3>Routine</h3>
+            <ul>
+                <li>Water floss, brush, wax floss 2x / day</li>
+                <li>Morning toothpaste: Weldental Chewtab Advanced Whitening Toothpaste Tablets with Nano Hydroxyapatite</li>
+                <li>Evening toothpaste: Colgate PreviDent 5000 ppm Dry Mouth 1.1% Sodium Fluoride (Rx Only)</li>
+                <li>CloSYS Healthy Teeth Anticavity Fluoride Mouth Rinse <strong>(to be replaced by Lumina Probiotic Jun 2024)</strong></li>
+            </ul>
+
+            <h3>Gear</h3>
+            <ul class="dental-gear-list">
+                <li>
+                    <span>Oral-B Genius iO Series 10 Electric Toothbrush</span>
+                    <img src="assets/oral-b.jpeg" alt="Oral-B Genius iO Series 10 Electric Toothbrush" class="dental-image">
+                </li>
+                <li>
+                    <span>Waterpik Sidekick</span>
+                    <img src="assets/waterpik.jpg" alt="Waterpik Sidekick" class="dental-image">
+                </li>
+                <li>
+                    <span>WELdental Chewtab Advanced Whitening Toothpaste Tablets with Nano Hydroxyapatite</span>
+                    <img src="assets/chewtab.jpg" alt="WELdental Chewtab Advanced Whitening Toothpaste Tablets with Nano Hydroxyapatite" class="dental-image">
+                </li>
+                <li>
+                    <span>Colgate PreviDent 5000 ppm Dry Mouth 1.1% Sodium Fluoride (Rx Only)</span>
+                    <img src="assets/prevident.webp" alt="Colgate PreviDent 5000 ppm Dry Mouth" class="dental-image">
+                </li>
+                <li>
+                    <span>Lumina Probiotic</span>
+                    <img src="assets/lumina.jpeg" alt="Lumina Probiotic" class="dental-image">
+                </li>
+            </ul>
+        </div>
+
+        <h2 id="vaccines">Vaccine History</h2>
+        <div class="table-wrapper">
+            <p>Work in progress</p>
+        </div>
+
+
+        <h2 id="challenges">Current Challenges</h2>
+        <div class="table-wrapper">
+            <ul>
+                <li>Low BMD / osteopenia</li>
+                <li>Chronic shoulder and neck pain</li>
+                <li>Borderline high liver enzymes (AST/ALT)</li>
+                <li>High HbA1c</li>
+                <li>High cortisol</li>
+                <li>Graying hair in beard</li>
+                <li>Deviated septum; average 19 minutes snoring </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
