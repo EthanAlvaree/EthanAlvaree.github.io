@@ -11,24 +11,27 @@
 <body>
     <nav class="side-nav">
         <ul class="nav-list">
-            <li><a href="#body-composition">Body Composition</a></li>
-            <li><a href="#bloodwork">Bloodwork</a></li>
-            <li><a href="#prescriptions">Prescription Medications</a></li>
-            <li><a href="#investigations">Current Investigations</a></li>
-            <li><a href="#supplements">Supplements</a></li>
-            <li><a href="#skincare">Skincare</a></li>
-            <li><a href="#diet">Diet</a></li>
-            <li><a href="#exercise">Exercise</a></li>
-            <li><a href="#sleep">Sleep</a></li>
-            <li><a href="#oral-care">Oral Care</a></li>
-            <li><a href="#challenges">Current Challenges</a></li>
+            <li><a href="#body-composition">🩺 Body Composition</a></li>
+            <li><a href="#bloodwork">🩸 Bloodwork</a></li>
+            <li><a href="#prescriptions">💊 Medications</a></li>
+            <li><a href="#supplements">🌿 Supplements</a></li>
+            <li><a href="#skincare">🧴 Skincare</a></li>
+            <li><a href="#diet">🥗 Diet</a></li>
+            <li><a href="#exercise">🏃 Exercise</a></li>
+            <li><a href="#sleep">🛌 Sleep</a></li>
+            <li><a href="#oral-care">🦷 Oral Care</a></li>
+            <li><a href="#vaccines">💉 Vaccine Record</a></li>
+            <li><a href="#challenges">⚠️ Challenges</a></li>
         </ul>
     </nav>
 
     <div class="content">
         <h2 id="body-composition">Body Composition</h2>
         <div class="table-wrapper" id="body-composition-table-wrapper">
-            <p>A DEXA scan on 5/25/24 revealed the following body composition:</p>
+             <p>
+            <img src="assets/dexa_2.jpg" alt="DEXA Scan" class="centered-image" style="display: inline-block; float: right; max-width: 50%; width: 30%; margin-left: 10px;">
+                A DEXA (Dual-energy X-ray absorptiometry) scan performed at Dexa Body San Diego on 5/25/24 revealed the following body composition. You can download the full report here [<a href="assets/dexa_body_2024-05-25.pdf" target="_blank"><img src="assets/pdf.png" alt="PDF icon" style="width: 16px; height: 16px;"> pdf</a>].
+            </p>
             <input type="text" id="body-composition-search-input" class="search-input" placeholder="Search Body Composition...">
             <table>
                 <thead>
@@ -88,7 +91,7 @@
             </div>
         </div>
 
-        <h2 id="prescriptions">Prescription Medications</h2>
+        <h2 id="prescriptions">Current Medications</h2>
         <div class="table-wrapper" id="prescriptions-table-wrapper">
             <input type="text" id="prescriptions-search-input" class="search-input" placeholder="Search Prescriptions...">
             <table>
@@ -109,7 +112,7 @@
         </div>
 
         <div class="table-wrapper">
-            <h4>Current Investigations:</h3>
+            <h4>Current Investigations:</h4>
             <ul>
                 <li><strong>17α-Estradiol 8 mg / wk transdermal</strong>
                     <ul>
@@ -245,6 +248,7 @@
 
         <h2 id="diet">Diet</h2>
         <div class="table-wrapper">
+            <p>I subscribe to a vegan, plant-based diet. And unless I'm out to eat with friends, most of what I eat is delivered to my door by a company called Thistle. My daily meals look something like the following: </p>
             <h3>Breakfast (6:00 AM)</h3>
             <div class="meal-image-grid">
                 <div class="meal-item">
@@ -265,7 +269,8 @@
                 </div>
             </div>
             <p class="meal-description">One Thistle plant-based breakfast smoothie</p>
-
+            <blockquote>250-400 calories on average. 100% plant ingredients by weight. 10g+ of plant protein. ~10g of fiber. 0.5-1 oz nutrient-dense booster foods.</blockquote>
+            
             <h3>Lunch (11:30 AM)</h3>
             <div class="meal-image-grid">
                 <div class="meal-item">
@@ -286,6 +291,13 @@
                 </div>
             </div>
             <p class="meal-description">One Thistle plant-based lunch salad</p>
+            <blockquote>
+                An average of 450-650 calories. 100% plant ingredients. 20g+ of plant protein from legumes, nuts & seeds, adashah, tempeh, tofu, and whole, ancient grains
+                
+                ~15g of digestion-promoting fiber. 2-4 cups of leafy greens and other vegetables.
+
+                0.5-1 oz nutrient-dense booster foods such as spirulina, dandelion root, turmeric, chia, ashwagandha, or reishi
+            </blockquote>
 
             <h3>Dinner (4:00 PM)</h3>
             <div class="meal-image-grid">
@@ -307,14 +319,24 @@
                 </div>
             </div>
             <p class="meal-description">One Thistle plant-based dinner bowl</p>
+            <blockquote>
+                An average of 450-650 calories. 100% plant ingredients. 20g+ of plant protein from legumes, nuts & seeds, adashah, tempeh, tofu, and whole, ancient grains
+                
+                ~15g of digestion-promoting fiber. 2-4 cups of leafy greens and other vegetables.
+
+                0.5-1 oz nutrient-dense booster foods such as spirulina, dandelion root, turmeric, chia, ashwagandha, or reishi
+            </blockquote>
         </div>
 
         <h2 id="exercise">Exercise</h2>
         <div class="table-wrapper">
             <p>
-                After a DEXA scan revealed osteopenia, I have switched to rucking (walking with a weighted backpack) to increase bone density. I have also added a 3-day per week strength training program to increase muscle mass and bone density.
+                Historically, I got the majority of exercise from walking my dogs around the block and cycling with my partner outdoors in San Diego or indoors on Zwift.
             </p>
-
+            <p>
+                After a recent DEXA scan revealed osteopenia, I have switched to rucking (walking with a weighted backpack) to increase bone density. I have also added a 3-day per week strength training program to increase muscle mass and bone density.
+            </p>
+                
             <h3>Exercise Gear:</h3>
             <ul class="exercise-gear-list">
                 <li>
@@ -353,7 +375,7 @@
                     <div>
                         <span>Eight Sleep Pod 3</span>
                         <ul class="sleep-sublist">
-                            <li>Temperature set to 82°F bedtime, 78°F deep, 80°F REM, 97°F wakeup</li>
+                            <li>Temperature adjusts to 82°F bedtime, 78°F deep, 80°F REM, 97°F wakeup</li>
                         </ul>
                     </div>
                     <img src="assets/eight_sleep_pod_3.jpg" alt="Eight Sleep Pod 3" class="sleep-image">
@@ -380,40 +402,52 @@
             
             <h3>Routine</h3>
             <ul>
-                <li>Water floss, brush, wax floss 2x / day</li>
-                <li>Morning toothpaste: Weldental Chewtab Advanced Whitening Toothpaste Tablets with Nano Hydroxyapatite</li>
-                <li>Evening toothpaste: Colgate PreviDent 5000 ppm Dry Mouth 1.1% Sodium Fluoride (Rx Only)</li>
-                <li>CloSYS Healthy Teeth Anticavity Fluoride Mouth Rinse <strong>(to be replaced by Lumina Probiotic Jun 2024)</strong></li>
+                <li>Water floss with Waterpik Sidekick 2x / day</li>
+                <li>Brush with Oral-B Genius iO Series 10 Electric Toothbrush 2x / day
+                    <ul>
+                        <li>Morning toothpaste: Weldental Chewtab Advanced Whitening Toothpaste Tablets with Nano Hydroxyapatite</li>
+                        <li>Evening toothpaste: Colgate PreviDent 5000 ppm Dry Mouth 1.1% Sodium Fluoride (Rx Only)</li>
+                    </ul>
+                </li>
+                <li>Rinse with CloSYS Healthy Teeth Anticavity Fluoride Mouth Rinse <strong>(to be replaced by Lumina Probiotic Jun 2024)</strong></li>                
             </ul>
-
-            <h3>Gear</h3>
-            <ul class="dental-gear-list">
-                <li>
-                    <span>Oral-B Genius iO Series 10 Electric Toothbrush</span>
-                    <img src="assets/oral-b.jpeg" alt="Oral-B Genius iO Series 10 Electric Toothbrush" class="dental-image">
-                </li>
-                <li>
-                    <span>Waterpik Sidekick</span>
-                    <img src="assets/waterpik.jpg" alt="Waterpik Sidekick" class="dental-image">
-                </li>
-                <li>
-                    <span>WELdental Chewtab Advanced Whitening Toothpaste Tablets with Nano Hydroxyapatite</span>
-                    <img src="assets/chewtab.jpg" alt="WELdental Chewtab Advanced Whitening Toothpaste Tablets with Nano Hydroxyapatite" class="dental-image">
-                </li>
-                <li>
-                    <span>Colgate PreviDent 5000 ppm Dry Mouth 1.1% Sodium Fluoride (Rx Only)</span>
-                    <img src="assets/prevident.webp" alt="Colgate PreviDent 5000 ppm Dry Mouth" class="dental-image">
-                </li>
-                <li>
-                    <span>Lumina Probiotic</span>
-                    <img src="assets/lumina.jpeg" alt="Lumina Probiotic" class="dental-image">
-                </li>
-            </ul>
+            <div class="dental-gear-list" style="display: flex; justify-content: center;">
+                <img src="assets/waterpik.jpg" alt="Waterpik Sidekick" class="dental-image" style="max-width: 20%; height: 100px; margin-right: 10px;">
+                <img src="assets/oral-b.jpeg" alt="Oral-B Genius iO Series 10 Electric Toothbrush" class="dental-image" style="max-width: 20%; height: 100px; margin-right: 10px;">
+                <img src="assets/chewtab.jpg" alt="WELdental Chewtab Advanced Whitening Toothpaste Tablets with Nano Hydroxyapatite" class="dental-image" style="max-width: 20%; height: 100px; margin-right: 10px;">
+                <img src="assets/prevident.webp" alt="Colgate PreviDent 5000 ppm Dry Mouth" class="dental-image" style="max-width: 20%; height: 100px; margin-right: 10px;">
+                <img src="assets/closys.jpg" alt="CloSYS Healthy Teeth Anticavity Fluoride Mouth Rinse" class="dental-image" style="max-width: 20%; height: 100px; margin-right: 10px;">
+                <img src="assets/lumina.jpeg" alt="Lumina Probiotic" class="dental-image" style="max-width: 20%; height: 100px; margin-right: 10px;">
+            </div>
         </div>
 
         <h2 id="vaccines">Vaccine History</h2>
-        <div class="table-wrapper">
-            <p>Work in progress</p>
+        <div class="table-wrapper" id="vaccines-table-wrapper">
+            <input type="text" id="vaccines-search-input" class="search-input" placeholder="Search Vaccines...">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Vaccine</th>
+                        <th>1st Dose</th>
+                        <th>2nd Dose</th>
+                        <th>3rd Dose</th>
+                        <th>4th Dose</th>
+                        <th>5th Dose</th>
+                        <th>6th Dose</th>
+                        <th>7th Dose</th>
+                        <th>8th Dose</th>
+                        <th>9th Dose</th>
+                        <th>10th Dose</th>
+                        <th>11th Dose</th>
+                    </tr>
+                </thead>
+                <tbody id="vaccines-table-body">
+                    <!-- Rows will be loaded here -->
+                </tbody>
+            </table>
+            <div class="pagination" id="vaccines-pagination">
+                <!-- Pagination buttons will be loaded here -->
+            </div>
         </div>
 
 

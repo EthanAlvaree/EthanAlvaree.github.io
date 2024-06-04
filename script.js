@@ -6,6 +6,10 @@ const rowsPerPage = 10;
 let currentSupplementsPage = 1;
 let currentPrescriptionsPage = 1;
 
+let vaccineData = [];
+const rowsPerPageVaccine = 15;
+let currentVaccinePage = 1;
+
 async function fetchBodyCompositionData() {
     try {
         const response = await fetch('body_composition_table_data.json');
@@ -47,6 +51,17 @@ async function fetchPrescriptionsData() {
         loadPrescriptionsTable(); // Load prescriptions table on fetch
     } catch (error) {
         console.error("Error fetching prescriptions data:", error);
+    }
+}
+
+async function fetchVaccineData() {
+    try {
+        const response = await fetch('vaccines_table_data.json');
+        vaccineData = await response.json();
+        console.log("Vaccine data fetched successfully:", vaccineData);
+        loadVaccineTable(); // Load vaccine table on fetch
+    } catch (error) {
+        console.error("Error fetching vaccine data:", error);
     }
 }
 
@@ -271,6 +286,23 @@ function loadPrescriptionsTable() {
     updatePrescriptionsPagination();
 }
 
+function loadVaccineTable() {
+    const tableBody = document.getElementById('vaccines-table-body');
+    tableBody.innerHTML = '';
+    const start = (currentVaccinePage - 1) * rowsPerPageVaccine;
+    const end = start + rowsPerPageVaccine;
+    const pageData = Object.entries(vaccineData).slice(start, end);
+    pageData.forEach(([vaccine, doses]) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td><strong>${vaccine}</strong></td>
+            ${doses.map(dose => `<td style="font-size:14px">${dose}</td>`).join('')}
+        `;
+        tableBody.appendChild(tr);
+    });
+    updateVaccinePagination();
+}
+
 function updateSupplementsPagination() {
     const pagination = document.getElementById('supplements-pagination');
     pagination.innerHTML = '';
@@ -298,6 +330,22 @@ function updatePrescriptionsPagination() {
         button.addEventListener('click', () => {
             currentPrescriptionsPage = i;
             loadPrescriptionsTable();
+        });
+        pagination.appendChild(button);
+    }
+}
+
+function updateVaccinePagination() {
+    const pagination = document.getElementById('vaccines-pagination');
+    pagination.innerHTML = '';
+    const totalPages = Math.ceil(Object.keys(vaccineData).length / rowsPerPageVaccine);
+    for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement('button');
+        button.textContent = i;
+        button.disabled = i === currentVaccinePage;
+        button.addEventListener('click', () => {
+            currentVaccinePage = i;
+            loadVaccineTable();
         });
         pagination.appendChild(button);
     }
@@ -473,10 +521,31 @@ document.getElementById('prescriptions-search-input').addEventListener('input', 
     }
 });
 
+document.getElementById('vaccines-search-input').addEventListener('input', function () {
+    const searchText = this.value.toLowerCase();
+    const tableBody = document.getElementById('vaccines-table-body');
+    tableBody.innerHTML = '';
+    if (searchText === '') {
+        loadVaccineTable();
+    } else {
+        Object.entries(vaccineData).forEach(([vaccine, doses]) => {
+            if (vaccine.toLowerCase().includes(searchText) || doses.some(dose => dose.toLowerCase().includes(searchText))) {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${vaccine}</td>
+                    ${doses.map(dose => `<td>${dose}</td>`).join('')}
+                `;
+                tableBody.appendChild(tr);
+            }
+        });
+    }
+});
+
 fetchBodyCompositionData();
 fetchBloodworkData();
 fetchSupplementsData();
 fetchPrescriptionsData();
+fetchVaccineData();
 
 function createTrendChart(chartId, data, range) {
     const ctx = document.getElementById(chartId).getContext('2d');
