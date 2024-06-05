@@ -68,13 +68,15 @@ async function fetchVaccineData() {
 }
 
 
-function parseValue(value) {
+function parseValue(value, range) {
     console.log("Parsing value:", value);
     if (typeof value === 'string') {
+        const [min, max] = range.split(' - ').map(Number);
+        const margin = (max - min) * marginPercent;
         if (value.includes('<')) {
-            return parseFloat(value.replace('<', '').trim()) - 1e-10; // Slightly less than the threshold
+            return parseFloat(value.replace('<', '').trim()) - margin - 0.001; // Slightly less than the threshold minus margin
         } else if (value.includes('>')) {
-            return parseFloat(value.replace('>', '').trim()) + 1e-10; // Slightly more than the threshold
+            return parseFloat(value.replace('>', '').trim()) + margin + 0.001; // Slightly more than the threshold plus margin
         }
     }
     return parseFloat(value);
@@ -85,7 +87,7 @@ function isOutOfRange(value, range) {
     if (range === "*") {
         return false;
     }
-    const parsedValue = parseValue(value);
+    const parsedValue = parseValue(value, range);
     const [min, max] = range.split(' - ').map(Number);
     return (parsedValue < min || parsedValue > max);
 }
@@ -95,7 +97,7 @@ function isNearRangeBoundary(value, range, percentage = marginPercent) {
     if (range === "*") {
         return false;
     }
-    const parsedValue = parseValue(value);
+    const parsedValue = parseValue(value, range);
     const [min, max] = range.split(' - ').map(Number);
     const margin = (max - min) * percentage;
     return ((parsedValue >= min && parsedValue <= min + margin) || (parsedValue <= max && parsedValue >= max - margin));
@@ -106,7 +108,7 @@ function getCellClass(value, range, rangeType) {
     if (range === "*") {
         return 'in-range';
     }
-    const parsedValue = parseValue(value);
+    const parsedValue = parseValue(value, range);
     const [min, max] = range.split(' - ').map(Number);
     const margin = (max - min) * marginPercent;
 
@@ -138,13 +140,11 @@ function loadBloodworkCategory(category) {
             const tr = document.createElement('tr');
             const chartId = `chart-${category}-${row.parameter.replace(/\s+/g, '-')}`;
             const dateCells = row.dates.map(date => {
-                console.log("Processing date:", date);
                 if (date === "" || row.range === "*") {
                     return `<td>${date}</td>`;
                 } else {
                     const cellClass = getCellClass(date, row.range, row.rangeType);
                     const alertSymbol = cellClass === 'in-range' ? '' : ' ⚠️';
-                    console.log("Date:", date, "Class:", cellClass, "Alert:", alertSymbol);
                     return `<td class="${cellClass}">${date}${alertSymbol}</td>`;
                 }
             }).join('');
@@ -156,6 +156,7 @@ function loadBloodworkCategory(category) {
                 ${dateCells}
             `;
             tableBody.appendChild(tr);
+            createTrendChart(chartId, row.dates, row.range, row.rangeType);
         });
     } else {
         console.log("No data found for category:", category);
