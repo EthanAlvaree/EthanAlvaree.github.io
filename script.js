@@ -10,6 +10,8 @@ let vaccineData = [];
 const rowsPerPageVaccine = 15;
 let currentVaccinePage = 1;
 
+const marginPercent = 0.10;
+
 async function fetchBodyCompositionData() {
     try {
         const response = await fetch('body_composition_table_data.json');
@@ -65,17 +67,133 @@ async function fetchVaccineData() {
     }
 }
 
+
+function parseValue(value) {
+    console.log("Parsing value:", value);
+    if (typeof value === 'string') {
+        if (value.includes('<')) {
+            return parseFloat(value.replace('<', '').trim()) - 1e-10; // Slightly less than the threshold
+        } else if (value.includes('>')) {
+            return parseFloat(value.replace('>', '').trim()) + 1e-10; // Slightly more than the threshold
+        }
+    }
+    return parseFloat(value);
+}
+
 function isOutOfRange(value, range) {
-    if (typeof value !== 'string' && typeof value !== 'number') {
-        console.warn("Invalid value type for out-of-range check:", value);
+    console.log("Checking out of range:", value, range);
+    if (range === "*") {
         return false;
     }
-    if (typeof value === 'string') {
-        value = value.replace('<', '').replace('>', '').trim();
-    }
+    const parsedValue = parseValue(value);
     const [min, max] = range.split(' - ').map(Number);
-    const numValue = Number(value);
-    return (numValue < min || numValue > max);
+    return (parsedValue < min || parsedValue > max);
+}
+
+function isNearRangeBoundary(value, range, percentage = marginPercent) {
+    console.log("Checking near range boundary:", value, range);
+    if (range === "*") {
+        return false;
+    }
+    const parsedValue = parseValue(value);
+    const [min, max] = range.split(' - ').map(Number);
+    const margin = (max - min) * percentage;
+    return ((parsedValue >= min && parsedValue <= min + margin) || (parsedValue <= max && parsedValue >= max - margin));
+}
+
+function getCellClass(value, range, rangeType) {
+    console.log("Getting cell class:", value, range, rangeType);
+    if (range === "*") {
+        return 'in-range';
+    }
+    const parsedValue = parseValue(value);
+    const [min, max] = range.split(' - ').map(Number);
+    const margin = (max - min) * marginPercent;
+
+    switch (rangeType) {
+        case 'one-sided-less':
+            if (parsedValue > max) return 'out-of-range';
+            if (parsedValue >= max - margin) return 'near-range-boundary';
+            return 'in-range';
+
+        case 'one-sided-more':
+            if (parsedValue < min) return 'out-of-range';
+            if (parsedValue <= min + margin) return 'near-range-boundary';
+            return 'in-range';
+
+        case 'two-sided':
+        default:
+            if (parsedValue < min || parsedValue > max) return 'out-of-range';
+            if ((parsedValue >= min && parsedValue <= min + margin) || (parsedValue <= max && parsedValue >= max - margin)) return 'near-range-boundary';
+            return 'in-range';
+    }
+}
+
+function loadBloodworkCategory(category) {
+    console.log("Loading category:", category);
+    const tableBody = document.getElementById('bloodwork-table-body');
+    tableBody.innerHTML = '';
+    if (bloodworkData[category]) {
+        bloodworkData[category].forEach(row => {
+            const tr = document.createElement('tr');
+            const chartId = `chart-${category}-${row.parameter.replace(/\s+/g, '-')}`;
+            const dateCells = row.dates.map(date => {
+                console.log("Processing date:", date);
+                if (date === "" || row.range === "*") {
+                    return `<td>${date}</td>`;
+                } else {
+                    const cellClass = getCellClass(date, row.range, row.rangeType);
+                    const alertSymbol = cellClass === 'in-range' ? '' : ' ⚠️';
+                    console.log("Date:", date, "Class:", cellClass, "Alert:", alertSymbol);
+                    return `<td class="${cellClass}">${date}${alertSymbol}</td>`;
+                }
+            }).join('');
+            tr.innerHTML = `
+                <td>${row.parameter}</td>
+                <td>${row.unit}</td>
+                <td>${row.range}</td>
+                <td><canvas id="${chartId}" width="150" height="75"></canvas></td>
+                ${dateCells}
+            `;
+            tableBody.appendChild(tr);
+        });
+    } else {
+        console.log("No data found for category:", category);
+    }
+}
+
+fetchBloodworkData();
+
+function loadBloodworkCategory(category) {
+    console.log("Loading category:", category);
+    const tableBody = document.getElementById('bloodwork-table-body');
+    tableBody.innerHTML = '';
+    if (bloodworkData[category]) {
+        bloodworkData[category].forEach(row => {
+            const tr = document.createElement('tr');
+            const chartId = `chart-${category}-${row.parameter.replace(/\s+/g, '-')}`;
+            const dateCells = row.dates.map(date => {
+                if (date === "" || row.range === "*") {
+                    return `<td>${date}</td>`;
+                } else {
+                    const cellClass = getCellClass(date, row.range, row.rangeType);
+                    const alertSymbol = cellClass === 'in-range' ? '' : ' ⚠️';
+                    return `<td class="${cellClass}">${date}${alertSymbol}</td>`;
+                }
+            }).join('');
+            tr.innerHTML = `
+                <td>${row.parameter}</td>
+                <td>${row.unit}</td>
+                <td>${row.range}</td>
+                <td><canvas id="${chartId}" width="150" height="75"></canvas></td>
+                ${dateCells}
+            `;
+            tableBody.appendChild(tr);
+            createTrendChart(chartId, row.dates, row.range, row.rangeType);
+        });
+    } else {
+        console.log("No data found for category:", category);
+    }
 }
 
 function loadBodyCompositionCategory(category) {
@@ -155,38 +273,6 @@ function loadBodyCompositionCategory(category) {
                 `;
                 tableBody.appendChild(tr);
             }
-        });
-    } else {
-        console.log("No data found for category:", category);
-    }
-}
-
-function loadBloodworkCategory(category) {
-    console.log("Loading category:", category);
-    const tableBody = document.getElementById('bloodwork-table-body');
-    tableBody.innerHTML = '';
-    if (bloodworkData[category]) {
-        bloodworkData[category].forEach(row => {
-            const tr = document.createElement('tr');
-            const chartId = `chart-${category}-${row.parameter.replace(/\s+/g, '-')}`;
-            const dateCells = row.dates.map(date => {
-                if (date === "" || row.range === "*") {
-                    return `<td>${date}</td>`;
-                } else if (isOutOfRange(date, row.range)) {
-                    return `<td class="out-of-range">${date} ⚠️</td>`;
-                } else {
-                    return `<td>${date}</td>`;
-                }
-            }).join('');
-            tr.innerHTML = `
-                <td>${row.parameter}</td>
-                <td>${row.unit}</td>
-                <td>${row.range}</td>
-                <td><canvas id="${chartId}" width="150" height="75"></canvas></td>
-                ${dateCells}
-            `;
-            tableBody.appendChild(tr);
-            createTrendChart(chartId, row.dates, row.range);
         });
     } else {
         console.log("No data found for category:", category);
@@ -542,23 +628,52 @@ document.getElementById('vaccines-search-input').addEventListener('input', funct
 });
 
 fetchBodyCompositionData();
-fetchBloodworkData();
 fetchSupplementsData();
 fetchPrescriptionsData();
 fetchVaccineData();
 
-function createTrendChart(chartId, data, range) {
+function createTrendChart(chartId, data, range, rangeType) {
     const ctx = document.getElementById(chartId).getContext('2d');
     const parsedData = data.map(value => value === "" ? null : parseFloat(value)).reverse();
     const labels = ['12/22', '5/23', '9/23', '5/24'];
 
     let minRange, maxRange;
     if (range === "*") {
-        minRange = -Infinity;
-        maxRange = Infinity;
+        minRange = Math.min(...parsedData.filter(val => val !== null)) - 5;
+        maxRange = Math.max(...parsedData.filter(val => val !== null)) + 5;
     } else {
         [minRange, maxRange] = range.split(' - ').map(Number);
     }
+
+    const observedMin = Math.min(...parsedData.filter(val => val !== null));
+    const observedMax = Math.max(...parsedData.filter(val => val !== null));
+
+    // Set the y-axis limits with a margin
+    const margin = (maxRange - minRange) * marginPercent;
+    const yMin = Math.min(minRange, observedMin) - margin;
+    const yMax = Math.max(maxRange, observedMax) + margin;
+
+    const pointColors = parsedData.map(value => {
+        if (value === null) {
+            return 'gray';
+        } else if (range === "*" || rangeType === 'two-sided' && (value >= minRange && value <= maxRange)) {
+            return 'green';
+        } else if (rangeType === 'one-sided-less' && value > maxRange) {
+            return 'red';
+        } else if (rangeType === 'one-sided-less' && value > maxRange - margin) {
+            return 'yellow';
+        } else if (rangeType === 'one-sided-more' && value < minRange) {
+            return 'red';
+        } else if (rangeType === 'one-sided-more' && value < minRange + margin) {
+            return 'yellow';
+        } else if (rangeType === 'two-sided' && (value < minRange || value > maxRange)) {
+            return 'red';
+        } else if (rangeType === 'two-sided' && ((value >= minRange && value <= minRange + margin) || (value <= maxRange && value >= maxRange - margin))) {
+            return 'yellow';
+        } else {
+            return 'green';
+        }
+    });
 
     new Chart(ctx, {
         type: 'line',
@@ -568,7 +683,7 @@ function createTrendChart(chartId, data, range) {
                 data: parsedData,
                 borderColor: 'black',
                 backgroundColor: 'rgba(0, 0, 0, 0)',
-                pointBackgroundColor: parsedData.map(value => (value >= minRange && value <= maxRange) || range === '*' ? 'green' : 'orange'),
+                pointBackgroundColor: pointColors,
                 fill: false,
                 tension: 0.1,
                 pointRadius: 5
@@ -577,11 +692,11 @@ function createTrendChart(chartId, data, range) {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true,
-                    min: Math.min(...parsedData.filter(val => val !== null)) - 5,
-                    max: Math.max(...parsedData.filter(val => val !== null)) + 5,
+                    beginAtZero: false,
+                    min: yMin,
+                    max: yMax,
                     ticks: {
-                        stepSize: 10
+                        stepSize: (yMax - yMin) / 10
                     },
                     grid: {
                         display: false
@@ -598,37 +713,7 @@ function createTrendChart(chartId, data, range) {
                     display: false
                 },
                 annotation: {
-                    annotations: range === '*' ? {
-                        box1: {
-                            type: 'box',
-                            yScaleID: 'y',
-                            yMin: Math.min(...parsedData.filter(val => val !== null)) - 5,
-                            yMax: Math.max(...parsedData.filter(val => val !== null)) + 5,
-                            backgroundColor: 'rgba(144, 238, 144, 0.5)', // Entirely light green for no specific range
-                        }
-                    } : {
-                        box1: {
-                            type: 'box',
-                            yScaleID: 'y',
-                            yMin: minRange,
-                            yMax: maxRange,
-                            backgroundColor: 'rgba(144, 238, 144, 0.5)', // light green for in-range values
-                        },
-                        box2: {
-                            type: 'box',
-                            yScaleID: 'y',
-                            yMin: Math.min(...parsedData.filter(val => val !== null)) - 5,
-                            yMax: minRange,
-                            backgroundColor: 'rgba(255, 255, 102, 0.5)', // light yellow for out-of-range values below min
-                        },
-                        box3: {
-                            type: 'box',
-                            yScaleID: 'y',
-                            yMin: maxRange,
-                            yMax: Math.max(...parsedData.filter(val => val !== null)) + 5,
-                            backgroundColor: 'rgba(255, 255, 102, 0.5)', // light yellow for out-of-range values above max
-                        }
-                    }
+                    annotations: getChartAnnotations(minRange, maxRange, rangeType, range)
                 }
             },
             layout: {
@@ -639,6 +724,92 @@ function createTrendChart(chartId, data, range) {
             }
         }
     });
+}
+
+function getChartAnnotations(minRange, maxRange, rangeType, range) {
+    const annotations = {
+        box1: {
+            type: 'box',
+            yScaleID: 'y',
+            yMin: minRange,
+            yMax: maxRange,
+            backgroundColor: range === "*" ? 'rgba(144, 238, 144, 0.5)' : 'rgba(144, 238, 144, 0.5)', // light green for in-range values
+        }
+    };
+
+    if (range !== "*") {
+        const margin = (maxRange - minRange) * marginPercent;
+
+        switch (rangeType) {
+            case 'one-sided-less':
+                annotations.box2 = {
+                    type: 'box',
+                    yScaleID: 'y',
+                    yMin: maxRange - margin,
+                    yMax: maxRange,
+                    backgroundColor: 'rgba(255, 255, 102, 0.5)', // light yellow for near range boundary above
+                };
+                annotations.box3 = {
+                    type: 'box',
+                    yScaleID: 'y',
+                    yMin: maxRange,
+                    yMax: maxRange + margin,
+                    backgroundColor: 'rgba(255, 102, 102, 0.5)', // light red for out-of-range values above max
+                };
+                break;
+
+            case 'one-sided-more':
+                annotations.box2 = {
+                    type: 'box',
+                    yScaleID: 'y',
+                    yMin: minRange,
+                    yMax: minRange + margin,
+                    backgroundColor: 'rgba(255, 255, 102, 0.5)', // light yellow for near range boundary below
+                };
+                annotations.box3 = {
+                    type: 'box',
+                    yScaleID: 'y',
+                    yMin: minRange - margin,
+                    yMax: minRange,
+                    backgroundColor: 'rgba(255, 102, 102, 0.5)', // light red for out-of-range values below min
+                };
+                break;
+
+            case 'two-sided':
+            default:
+                annotations.box2 = {
+                    type: 'box',
+                    yScaleID: 'y',
+                    yMin: minRange,
+                    yMax: minRange + margin,
+                    backgroundColor: 'rgba(255, 255, 102, 0.5)', // light yellow for near range boundary below
+                };
+                annotations.box3 = {
+                    type: 'box',
+                    yScaleID: 'y',
+                    yMin: maxRange - margin,
+                    yMax: maxRange,
+                    backgroundColor: 'rgba(255, 255, 102, 0.5)', // light yellow for near range boundary above
+                };
+                annotations.box4 = {
+                    type: 'box',
+                    yScaleID: 'y',
+                    yMin: minRange - margin,
+                    yMax: minRange,
+                    backgroundColor: 'rgba(255, 102, 102, 0.5)', // light red for out-of-range values below min
+                };
+                annotations.box5 = {
+                    type: 'box',
+                    yScaleID: 'y',
+                    yMin: maxRange,
+                    yMax: maxRange + margin,
+                    backgroundColor: 'rgba(255, 102, 102, 0.5)', // light red for out-of-range values above max
+                };
+                break;
+        }
+    }
+
+    return annotations;
 }
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

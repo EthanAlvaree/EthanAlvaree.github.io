@@ -309,6 +309,16 @@ th, td {
     border-bottom: 1px solid #dddddd;
 }
 
+td {
+    white-space: nowrap; /* Prevent text wrapping for all cells */
+}
+
+td:first-child {
+    white-space: normal; /* Allow text wrapping for the first column */
+    word-wrap: break-word; /* Ensure long words break correctly */
+    width: 150px; /* Set the width for the first column, adjust as needed */
+}
+
 th {
     background-color: #009879;
     color: #ffffff;
@@ -323,7 +333,13 @@ tr:hover, tr.highlight {
 }
 
 .out-of-range {
-    color: red;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+.near-range-boundary {
+    background-color: yellow;
+    color: black;
     font-weight: bold;
 }
 
