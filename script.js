@@ -67,16 +67,15 @@ async function fetchVaccineData() {
     }
 }
 
-
 function parseValue(value, range) {
     console.log("Parsing value:", value);
     if (typeof value === 'string') {
         const [min, max] = range.split(' - ').map(Number);
         const margin = (max - min) * marginPercent;
         if (value.includes('<')) {
-            return parseFloat(value.replace('<', '').trim()) - margin - 0.001; // Slightly less than the threshold minus margin
+            return parseFloat(value.replace('<', '').trim()) - margin - 0.0001; // Slightly less than the threshold minus margin
         } else if (value.includes('>')) {
-            return parseFloat(value.replace('>', '').trim()) + margin + 0.001; // Slightly more than the threshold plus margin
+            return parseFloat(value.replace('>', '').trim()) + margin + 0.0001; // Slightly more than the threshold plus margin
         }
     }
     return parseFloat(value);
@@ -635,7 +634,7 @@ fetchVaccineData();
 
 function createTrendChart(chartId, data, range, rangeType) {
     const ctx = document.getElementById(chartId).getContext('2d');
-    const parsedData = data.map(value => value === "" ? null : parseFloat(value)).reverse();
+    const parsedData = data.map(value => value === "" ? null : parseValue(value, range)).reverse();
     const labels = ['12/22', '5/23', '9/23', '5/24'];
 
     let minRange, maxRange;
