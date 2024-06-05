@@ -657,21 +657,17 @@ function createTrendChart(chartId, data, range, rangeType) {
     const pointColors = parsedData.map(value => {
         if (value === null) {
             return 'gray';
-        } else if (range === "*" || rangeType === 'two-sided' && (value >= minRange && value <= maxRange)) {
+        } else if (rangeType === 'one-sided-less') {
+            if (value > maxRange) return 'red';
+            if (value >= maxRange - margin) return 'yellow';
             return 'green';
-        } else if (rangeType === 'one-sided-less' && value > maxRange) {
-            return 'red';
-        } else if (rangeType === 'one-sided-less' && value > maxRange - margin) {
-            return 'yellow';
-        } else if (rangeType === 'one-sided-more' && value < minRange) {
-            return 'red';
-        } else if (rangeType === 'one-sided-more' && value < minRange + margin) {
-            return 'yellow';
-        } else if (rangeType === 'two-sided' && (value < minRange || value > maxRange)) {
-            return 'red';
-        } else if (rangeType === 'two-sided' && ((value >= minRange && value <= minRange + margin) || (value <= maxRange && value >= maxRange - margin))) {
-            return 'yellow';
-        } else {
+        } else if (rangeType === 'one-sided-more') {
+            if (value < minRange) return 'red';
+            if (value <= minRange + margin) return 'yellow';
+            return 'green';
+        } else { // two-sided
+            if (value < minRange || value > maxRange) return 'red';
+            if ((value >= minRange && value <= minRange + margin) || (value <= maxRange && value >= maxRange - margin)) return 'yellow';
             return 'green';
         }
     });
