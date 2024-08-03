@@ -142,8 +142,8 @@
         "dv": "*",
         "molecule": "Calcium Alpha Ketoglutarate",
         "ingredients": "Vegetable capsule, rice flour",
-        "morning": "1",
-        "evening": "1"
+        "morning": "2",
+        "evening": "2"
     },
     {
         "name": "Cocoa Flavanols",
@@ -233,7 +233,7 @@
             }
         ],
         "ingredients": "microcrystalline cellulose, vegetable cellulose (capsule), vegetable stearate, silica",
-        "morning": "",
+        "morning": "1",
         "evening": ""
     },
     {
@@ -270,47 +270,6 @@
         "evening": ""
     },
     {
-        "name": "Omega 3 (DHA/EPA/DPA) & Omega-7",
-        "brand": "DEVA Omega-3 DHA-EPA 300 mg",
-        "brand_url": "https://www.iherb.com/pr/deva-vegan-omega-3-dha-epa-300-mg-90-softgels/55158",
-        "subrows": [
-            {
-                "dose": "587 mg",
-                "dv": "*",
-                "molecule": "DHA (docosahexaenoic acid)"
-            },
-            {
-                "dose": "368 mg",
-                "dv": "*",
-                "molecule": "EPA (eicosapentaenoic acid)"
-            },
-            {
-                "dose": "75 mg",
-                "dv": "*",
-                "molecule": "DPA (docosapentaenoic acid)"
-            },
-            {
-                "dose": "0.9 mg",
-                "dv": "*",
-                "molecule": "Omega 7 (palmitoleic acid)"
-            }
-        ],
-        "ingredients": "Non-GMO Tapioca starch, Vegetable Glycerin, Purified Water, High Oleic Sunflower Oil, Mixed Tocopherols, Orange Oil (Organic), Annatto color, Rosemary Extract, Ascorbyl Palmitate",
-        "morning": "3",
-        "evening": ""
-    },
-    {
-        "name": "Omega 3 (ALA)",
-        "brand": "DEVA Vegan Flaxseed Oil",
-        "brand_url": "https://www.iherb.com/pr/deva-premium-vegan-flaxseed-oil-90-vegan-caps/14687",
-        "dose": "500 mg",
-        "dv": "*",
-        "molecule": "Flaxseed Oil (organic) (Typically providing 55% Alpha Linolenic Acid)",
-        "ingredients": "Vegan capsule (cellulose), organic orange oil, silica, mixed tocopherols",
-        "morning": "1",
-        "evening": ""
-    },
-    {
         "name": "Fisetin",
         "brand": "Life Extension Bio-Fisetin",
         "brand_url": "https://www.lifeextension.com/vitamins-supplements/item02414/bio-fisetin",
@@ -344,14 +303,24 @@
                 "dose": "2400 mg",
                 "dv": "*",
                 "molecule": "Garlic extract (bulb) [std. to 10,000 ppm allicin potential]"
-            },
-            {
-                "dose": "1200 mg",
-                "dv": "*",
-                "molecule": "Aged garlic extract Powder (bulb)"
             }
         ],
         "ingredients": "vegetable cellulose (capsule), microcrystalline cellulose, vegetable stearate",
+        "morning": "4",
+        "evening": "4"
+    },
+    {
+        "name": "Garlic, Aged Kyolic",
+        "brand": "Wakunaga Kyolic Aged Garlic Extract",
+        "brand_url": "https://www.iherb.com/pr/kyolic-aged-garlic-extract-cardiovascular-health-vegan-formula-300-360-vegan-capsules/127504",
+        "subrows": [
+            {
+                "dose": "1200 mg",
+                "dv": "*",
+                "molecule": "Aged Garlic Extract Powder (bulb)"
+            }
+        ],
+        "ingredients": "microcrystalline cellulose, hypromellose (vegetarian) capsule",
         "morning": "4",
         "evening": "4"
     },
@@ -588,6 +557,47 @@
         "molecule": "Niagen (nicotinamide riboside chloride)",
         "ingredients": "microcrystalline cellulose, hypromellose (vegetarian capsule), vegetable magnesium, stearate",
         "morning": "2",
+        "evening": ""
+    },
+    {
+        "name": "Omega 3 (DHA/EPA/DPA) & Omega-7",
+        "brand": "DEVA Omega-3 DHA-EPA 300 mg",
+        "brand_url": "https://www.iherb.com/pr/deva-vegan-omega-3-dha-epa-300-mg-90-softgels/55158",
+        "subrows": [
+            {
+                "dose": "587 mg",
+                "dv": "*",
+                "molecule": "DHA (docosahexaenoic acid)"
+            },
+            {
+                "dose": "368 mg",
+                "dv": "*",
+                "molecule": "EPA (eicosapentaenoic acid)"
+            },
+            {
+                "dose": "75 mg",
+                "dv": "*",
+                "molecule": "DPA (docosapentaenoic acid)"
+            },
+            {
+                "dose": "0.9 mg",
+                "dv": "*",
+                "molecule": "Omega 7 (palmitoleic acid)"
+            }
+        ],
+        "ingredients": "Non-GMO Tapioca starch, Vegetable Glycerin, Purified Water, High Oleic Sunflower Oil, Mixed Tocopherols, Orange Oil (Organic), Annatto color, Rosemary Extract, Ascorbyl Palmitate",
+        "morning": "3",
+        "evening": ""
+    },
+    {
+        "name": "Omega 3 (ALA)",
+        "brand": "DEVA Vegan Flaxseed Oil",
+        "brand_url": "https://www.iherb.com/pr/deva-premium-vegan-flaxseed-oil-90-vegan-caps/14687",
+        "dose": "500 mg",
+        "dv": "*",
+        "molecule": "Flaxseed Oil (organic) (Typically providing 55% Alpha Linolenic Acid)",
+        "ingredients": "Vegan capsule (cellulose), organic orange oil, silica, mixed tocopherols",
+        "morning": "1",
         "evening": ""
     },
     {
